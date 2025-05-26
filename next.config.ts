@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	experimental: {
+		ppr: true,
+		reactCompiler: true,
+		viewTransition: true,
+	},
+	async redirects() {
+		return [
+			{
+				source: "/perfil",
+				destination: "/perfil/biblioteca",
+				permanent: true,
+			},
+		];
+	},
 };
 
 export default nextConfig;
